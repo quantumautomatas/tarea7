@@ -64,7 +64,60 @@
     			\caption{El autómata A}
     		\end{figure}
     
+            \begin{enumerate}
+                \item Autómata mínimo\\
+                Comencemos con la partición inducida por $[\equiv_{0}] = 
+                \{A = F, B = Q \setminus F\}$.\\
+                Evaluando $\delta$ para obtener las clases de $\equiv_{1}$
+                
+                    \begin{table}[H]
+                        \centering
+                        \begin{tabular}{|l|l|l|}
+                            \hline
+                            $A$ & $q_{2}$ & $q_4$ \\ \hline
+                            $a$      & $B$     & $B$   \\ \hline
+                            $b$      & $B$     & $B$   \\ \hline
+                        \end{tabular}
+                        \quad
+                        \begin{tabular}{|l|l|l|l|l|l|}
+                            \hline
+                            $B$ & $q_{0}$ & $q_{1}$ & $q_{3}$ & $q_{5}$ & $q_{6}$ \\ \hline
+                            $a$      & $B$     & $B$     & $A$     & $B$     & $B$     \\ \hline
+                            $b$      & $B$     & $A$     & $B$     & $B$     & $B$     \\ \hline
+                        \end{tabular}
+                    \end{table}
 
+                $A$ no cambia, y de $B$ se refinan tres nuevas clases.\\
+                Por lo que $[\equiv_{1}] = \{A, C = \{q_{0}, q_{5}, q_{6}\},
+                D = \{q_{1}\}, E = \{q_{3}\}\}$.\\
+                Cómo $D$ y $E$ son unitarios, sólo hay que evaluar $\delta$ en 
+                los elementos de $C$ para obtener las clases de $\equiv_{2}$.\\
+                \begin{table}[H]
+                    \centering
+                    \begin{tabular}{|l|l|l|l|}
+                    \hline
+                    $C$ & $q_{0}$ & $q_{5}$ & $q_{6}$ \\ \hline
+                    $a$ & $D$     & $C$     & $C$     \\ \hline
+                    $b$ & $E$     & $C$     & $C$     \\ \hline
+                    \end{tabular}
+                \end{table} 
+                Entonces $[\equiv_{1}] = \{A, D, E, G = \{q_{0}\}, H = \{q_{5},
+                q_{6}\}\}$.
+                Evaluando $\delta$ sobre $H$ para obtener las clases de 
+                $\equiv_{3}$
+                \begin{table}[H]
+                    \centering
+                    \begin{tabular}{|l|l|l|l|}
+                    \hline
+                    $H$ & $q_{5}$ & $q_{6}$ \\ \hline
+                    $a$ & $H$     & $H$     \\ \hline
+                    $b$ & $H$     & $H$     \\ \hline
+                    \end{tabular}
+                \end{table}
+                Por lo que no se generó ningún refinanmiento, por lo que el 
+                proceso ya ha acabado.\\
+                El autómata mínimo entonces es 
+            \end{enumerate}
     	}
     \end{enumerate}
 \end{document}
