@@ -57,7 +57,10 @@
     			 \begin{enumerate}
     				\item {
     				Autómata mínimo\\
-    				Para minimizar el autómata, primero quitamos los estados inaccesibles, podemos ver que no hay manera de acceder a $q_{4}$, así que lo eliminamos del autómata y eliminamos las transiciones hacia el.\\
+                    Para minimizar el autómata, primero quitamos los estados 
+                    inaccesibles, podemos ver que no hay manera de acceder a 
+                    $q_{4}$, así que lo eliminamos del autómata y eliminamos 
+                    las transiciones hacia el.\\
     				
     				Comencemos con la partición inducida por $[\equiv_{0}] = 
     				\{A = F, B = Q \setminus F\}$.\\
@@ -80,11 +83,14 @@
     					\end{tabular}
     				\end{table}
     				
-    				De $A$ se refinan tres nuevas clases , y de $B$ se refinan dos nuevas clases.\\
-    				Por lo que $[\equiv_{1}] = \{B=\{q_{0}\}, F=\{q_{8}\} , C = \{q_{1}, q_{5}\},
+                    De $A$ se refinan tres nuevas clases , y de $B$ se refinan 
+                    dos nuevas clases.\\
+                    Por lo que $[\equiv_{1}] = \{B=\{q_{0}\}, F=\{q_{8}\} , 
+                    C = \{q_{1}, q_{5}\},
     				D = \{q_{2}, q_{6}\}, E = \{q_{3}, q_{7}\}\}$.\\
     				Hay que evaluar $\delta$ en 
-    				los elementos de $C, D, E$ para obtener las clases de $\equiv_{2}$.\\
+                    los elementos de $C, D, E$ para obtener las clases de 
+                    $\equiv_{2}$.\\
     				\begin{table}[H]
     					\centering
     					\begin{tabular}{|l|l|l|}
@@ -121,9 +127,10 @@
     			}
     		
     			\item {
-    			Expresión regular usando el sistema de ecuaciones característico:\\
-    			
-    			Consideremos: $B = 0, C = 1, D = 2, E = 3, F= 4$\\ Definimos el sistema de ecuaciones a resolver:\\
+                Expresión regular usando el sistema de ecuaciones característico:
+    			\\
+                Consideremos: $B = 0, C = 1, D = 2, E = 3, F= 4$.
+                Definimos el sistema de ecuaciones a resolver:
     			\begin{align*}
     				L_{0} &= aL_{1} + bL_{1}\\
     				L_{1} &= aL_{2} + bL_{3} + \epsilon\\
@@ -173,7 +180,8 @@
     				L_{0} &= (a+b)L_{1}\\
     				L_{0} &= (a+b)(a + b^*)
     			\end{align*}
-    			Por lo tanto, la expresión regular correspondiente al lenguaje aceptado es: $\alpha = (a+b)(a + b^*)$
+                Por lo tanto, la expresión regular correspondiente al lenguaje 
+                aceptado es: $\alpha = (a+b)(a + b^*)$
     		}
     			\end{enumerate}
 			}
@@ -245,8 +253,28 @@
                 	\caption{El autómata mínimo A'}
                 \end{figure}
             }
-        	\item{
-        	}
+        	\item {
+            Expresión regular \\
+            Consideremos: $G = 0, D = 1, E = 2, A = 3, H = 4$.
+            Definimos el sistema de ecuaciones a resolver:
+            \begin{align*}
+                L_{0} &= aL_{1} + bL_{2}\\
+                L_{1} &= aL_{4} + bL_{3}\\
+                L_{2} &= aL_{3} + bL_{4}\\
+                L_{3} &= aL_{4} + bL_{4} + \epsilon = (a+b)L_{4}+\epsilon\\
+                L_{4} &= aL_{4} + bL_{4} = (a+b)L_{4}
+            \end{align*}
+            Usando el lema de Arden, tenemos que 
+            \begin{align*}
+                &L_{4} = (a+b)^{*} \varnothing = \varnothing\\
+                &\implies L_{3} = (a+b)\varnothing + \epsilon = \epsilon\\
+                &\implies L_{2} = a\epsilon + b\varnothing = a\\
+                &\implies L_{1} = a\varnothing + b\epsilon = b\\
+                &\implies L_{0} = ab + ba
+            \end{align*}
+            }
+            Por lo tanto, la expresión regular correspondiente al lenguaje 
+            aceptado es: $\alpha = ab + ba$
             \end{enumerate}
     	}
     \end{enumerate}
